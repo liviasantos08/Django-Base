@@ -2,9 +2,10 @@
 
 {% load crispy_forms_tags %}
 
+<form action="" method="POST">
 {% block content %}
+{% csrf_token %}
   {% crispy form %}
- <div class="btnsaction">
-   <input type="submit" value="salvar"/>
- </div>
+  </form>
 {% endblock %}
+
