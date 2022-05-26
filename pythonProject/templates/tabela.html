@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3> Lista de Registros </h3>
+<hr>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+                <th>Data_Nascimento</th>
+                <th>Hora</th>
+                <th>Genero</th>
+                <th>Gol</th>
+            </tr>
+            {% for Pessoa in object_list %}
+            <tr>
+                <td>{{ Pessoa.pk}}</td>
+                <td>{{ Pessoa.nome}}</td>
+                <td>{{ Pessoa.sobrenome}}</td>
+                <td>{{ Pessoa.telefone}}</td>
+                <td>{{ Pessoa.cpf}}</td>
+                <td>{{ Pessoa.data_nascimento}}</td>
+                <td>{{ Pessoa.hora}}</td>
+                <td>{{ Pessoa.genero}}</td>
+                <td>{{ Pessoa.gol}}</td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <td>Nenhum campo cadastrado</td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+{% endblock content %}
